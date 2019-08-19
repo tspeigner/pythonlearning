@@ -1,0 +1,90 @@
+<script>
+    var kernel = IPython.notebook.kernel;
+    
+    var answers = ['0x78', '-0x7583', '-0x11d3', '0x2d0','-0x7a83','-0x5be', 'BUS','N']; //hex values
+
+    function checkAnswer(li) {
+        qNum = $(li).children('button:first').attr("id").split("-")[1];
+        correctAnswer = answers[qNum];
+        userAnswer = $.trim($(li).children('input:first').val());
+        outputSpan = $(li).children('span:first');
+        
+        if (isNaN(userAnswer) && userAnswer.toUpperCase() == correctAnswer) {
+            outputSpan.html("Correct!");
+            outputSpan.removeClass('error');
+        } else if ($.trim(userAnswer) == parseInt(correctAnswer,16)) {
+            outputSpan.html("Correct!");
+            outputSpan.removeClass('error');
+        } else {   
+            outputSpan.html("Incorrect");
+            outputSpan.addClass('error');
+        }
+    }
+
+    function toggleCode() {
+        console.log( "Toggling Code." );
+        
+        $("div.code_cell:first > div.input").toggle(750);
+        $("div.code_cell:first > div.output_wrapper div.output_prompt").toggle(0);
+        $("div.code_cell:first > div.output_wrapper div.out_prompt_overlay").toggle(0);
+        
+        if ($("#show-hide-button").text() == "Show Python Code") {
+            $("#show-hide-button").text("Hide Python Code");
+        } else {
+            $("#show-hide-button").text("Show Python Code");
+        }
+    }
+    
+    function showQuestions() {
+        console.log( "Adding questions.");
+        var questions = "";
+        var floatclass = 'left';
+        for (var i=0; i<answers.length; i++) {
+            questions += "<li class='" + floatclass + "'><input> <button id='q-" + i + "' onclick='checkAnswer($(this).parent())'>Check</button> <span class='result'></span></li>";
+            floatclass = (floatclass=="left") ? "right" : "left";
+        }
+        $("#questions").html(questions);
+        
+        $('input').keypress(function (e) {
+            if (e.which == 13) {
+                checkAnswer($(this).parent());
+                return false;
+            }
+});
+    }
+    
+    $( document ).ready(showQuestions);
+    $( document ).ready(toggleCode);
+</script>
+<style>
+    ol { width:600px; }
+    ol#questions li { margin:3px; width:280px;}
+    input { width: 120px; }
+    
+    .result {
+        color:darkgreen;
+        font-weight:bold;
+    }
+    
+    .left {
+        float: left;
+        clear:both;
+    }
+    
+    .right { float: right; }
+    .error { color:#f00; }
+    
+    #show-hide-button {
+        position:absolute;
+        bottom:10px;
+        right:10px;
+        color:#00f;
+        text-decoration:underline;
+        font-size:xx-small;
+        cursor:pointer;
+    }
+</style>
+<h1>Quiz</h1>
+<ol id="questions"></ol>
+<span onclick="toggleCode()" id="show-hide-button">Hide Python Code</span>
+    

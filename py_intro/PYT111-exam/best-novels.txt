@@ -1,0 +1,12 @@
+ULYSSES	James Joyce	1922
+THE GREAT GATSBY	F. Scott Fitzgerald	1925
+A PORTRAIT OF THE ARTIST AS A YOUNG MAN	James Joyce	1916
+LOLITA	Vladimir Nabokov	1955
+BRAVE NEW WORLD	Aldous Huxley	1931
+THE SOUND AND THE FURY	William Faulkner	1929
+CATCH-22	Joseph Heller	1961
+DARKNESS AT NOON	Arthur Koestler	1940
+SONS AND LOVERS	D.H. Lawrence	1913
+THE GRAPES OF WRATH	John Steinbeck	1939
+
+*http://www.modernlibrary.com/top-100/100-best-novels/

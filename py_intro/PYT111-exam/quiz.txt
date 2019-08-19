@@ -1,0 +1,19 @@
+Approximately how many words are in pride-and-prejudice.txt?
+
+What is the most common vowel to show up in pride-and-prejudice.txt?
+
+What is the difference in years between the publication dates of the oldest and newest novels listed in the best-novels.txt file?
+
+Which is the best iterable type for storing a changing number of random integers?
+
+The combo variable is formatted as "a-b-c" where a and b are both one-digit integers and c can be a one- or two-digit integer. Which of the following will always return c as an integer?
+
+In cards.py, which of the following should be returned by the is_flush() function?
+
+In cards.py, which of the following should be returned by the four_of_a_kind() function()?
+
+Which of the following statement types can have an else clause?
+
+In the else block of the high_card() function, which of the following should replace "i=0"?
+
+Apollo 11 launched at July 16, 1969 at 1:32:00 AM and landed on the moon at 8:17:40 PM on July 20, 1969. How long was the flight?
